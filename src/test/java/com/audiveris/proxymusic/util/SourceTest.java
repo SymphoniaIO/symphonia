@@ -15,13 +15,13 @@ import com.audiveris.proxymusic.Identification;
 import com.audiveris.proxymusic.Miscellaneous;
 import com.audiveris.proxymusic.MiscellaneousField;
 import com.audiveris.proxymusic.Opus;
+import com.audiveris.proxymusic.ProgramId;
 import com.audiveris.proxymusic.ScorePartwise;
 import com.audiveris.proxymusic.util.Source.SheetSystems;
 
 import junit.framework.TestCase;
 
 import org.junit.Test;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

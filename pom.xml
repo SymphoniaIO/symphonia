@@ -226,38 +226,6 @@
                 </executions>
             </plugin>
 
-            <!-- Ant tasks for Hg info -->
-            <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.8</version>
-                <executions>
-                    <execution>
-                        <phase>generate-sources</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <exportAntProperties>true</exportAntProperties>
-                            <target>
-                                <property name="program.name"
-                                          value="${project.name}">
-                                </property>
-                                <property name="program.version"
-                                          value="${project.version}">
-                                </property>
-                                <ant antfile="ant-tasks.xml"
-                                     dir="${basedir}"
-                                     target="generate-program-id"
-                                     inheritRefs="true" />
-                            </target>
-                            <sourceRoot>
-                                ${project.build.directory}/generated-sources/java
-                            </sourceRoot>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
             <!-- Entries in Jar manifest -->
             <!-- NOTA: For this, we need exportAntProperties to work correctly
             and this is not yet the case for Maven 3.0.4 -->
@@ -270,9 +238,6 @@
                         <manifest>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
-                        <manifestEntries>
-                            <Implementation-Revision>${program.revision}</Implementation-Revision>
-                        </manifestEntries>
                     </archive>
                 </configuration>
             </plugin>
@@ -358,13 +323,6 @@
                             <version>2.6</version>
                         </plugin>
 
-                        <!-- Unitary tests coverage -->
-<!--                        <plugin>
-                            <groupId>org.codehaus.mojo</groupId>
-                            <artifactId>cobertura-maven-plugin</artifactId>
-                            <version>2.5.2</version>
-                        </plugin>-->
-
                     </reportPlugins>
                 </configuration>
             </plugin>
@@ -372,42 +330,4 @@
         </plugins>
 
     </build>
-
 </project>
-<!--
-[DEBUG] Lifecycle default -> [validate, initialize, generate-sources, process-sources, generate-resources, process-resources, compile, process-classes, generate-test-sources, process-test-sources, generate-test-resources, process-test-resources, test-compile, process-test-classes, test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, verify, install, deploy]
-[DEBUG] Lifecycle clean -> [pre-clean, clean, post-clean]
-[DEBUG] Lifecycle site -> [pre-site, site, post-site, site-deploy]
--->
-
-<!-- Hg information -->
-<!--            <plugin>
-    <groupId>org.codehaus.mojo</groupId>
-    <artifactId>buildnumber-maven-plugin</artifactId>
-    <version>1.1</version>
-    <executions>
-        <execution>
-            <phase>validate</phase>
-            <goals>
-                <goal>create</goal>
-                <goal>hgchangeset</goal>
-            </goals>
-        </execution>
-    </executions>
-    <configuration>
-        <doCheck>false</doCheck>
-        <doUpdate>false</doUpdate>
-    </configuration>
-</plugin>   -->
-
-<!--            <plugin>
-    <artifactId>maven-mercurial-build-number-plugin</artifactId>
-    <version>1.0</version>
-    <executions>
-        <execution>
-            <goals>
-                <goal>set-build-number</goal>
-            </goals>
-        </execution>
-    </executions>
-</plugin>-->
