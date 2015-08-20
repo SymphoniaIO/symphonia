@@ -269,7 +269,7 @@ public abstract class Marshalling
      * Un-marshal a <b>ScorePartwise</b> instance or an <b>Opus</b> instance from an InputStream.
      * <p>
      * Nota: The URLs of MusicXML DTD are specifically ignored by this method.
-     *
+     * TODO: split to 2 methods
      * @param is the input stream
      * @return the root element (either Opus or ScorePartwise object)
      * @throws UnmarshallingException global exception (use getCause() for original exception)

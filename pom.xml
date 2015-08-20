@@ -56,29 +56,9 @@
         <url>http://kenai.com/jira/browse/PROXYMUSIC/</url>
     </issueManagement>
 
-    <!-- Continuous integration -->
-    <!--    <ciManagement>
-        <system>hudson</system>
-        <url>http://PC-BUREAU:8080/job/ProxyMusic/</url>
-    </ciManagement>-->
-
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <distributionManagement>
-        <!-- Location where site is deployed - username/password for site.deployments in server.xml -->
-        <site>
-            <id>proxymusic-repo</id>
-            <name>Site deployments</name>
-            <!--            <url>dav:http://kenai.com/website/${project.artifactId}/</url>-->
-            <!--             <url>https://kenai.com/website/${project.artifactId}/</url>-->
-            <!--             <url>ssh://kenai.com/website/${project.artifactId}/</url>-->
-            <!--            <url>https://kenai.com/proxymusic/website</url>-->
-            <!--            <url>scp://kenai.com/website/proxymusic/</url>-->
-            <url>scp://kenai.com/proxymusic/website/</url>
-        </site>
-    </distributionManagement>
 
     <profiles>
         <profile>
@@ -121,41 +101,7 @@
 
     <build>
         <defaultGoal>install</defaultGoal>
-        <!--        <finalName>${project.name}-${project.version}-r${hg-revision}</finalName>-->
-
-        <extensions>
-            <!-- For deploying using webdav -->
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh</artifactId>
-                <version>2.8</version>
-            </extension>
-        </extensions>
-
         <plugins>
-
-            <!-- Enforce JDK 7 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-enforcer-plugin</artifactId>
-                <version>1.4</version>
-                <executions>
-                    <execution>
-                        <id>enforce-java</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <requireJavaVersion>
-                                    <version>1.7</version>
-                                </requireJavaVersion>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            
             <!-- configure Maven to use JDK 7 for compilation -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -275,58 +221,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- Building web site -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.4</version>
-                <executions>
-                    <execution>
-                        <id>attach-descriptor</id>
-                        <goals>
-                            <goal>attach-descriptor</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <reportPlugins>
-                        <!-- Standard maven reports -->
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-project-info-reports-plugin</artifactId>
-                            <version>2.6</version>
-                        </plugin>
-
-                        <!-- JavaDoc -->
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-javadoc-plugin</artifactId>
-                            <configuration>
-                                <!-- To avoid too many 'errors' with JDK8 doclint -->
-                                <additionalparam>${javadoc.doclint.none}</additionalparam>
-                            </configuration>
-                            <version>2.10.1</version>
-                        </plugin>
-
-                        <!-- Java cross references -->
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-jxr-plugin</artifactId>
-                            <version>2.3</version>
-                        </plugin>
-
-                        <!-- Unitary tests report -->
-                        <plugin>
-                            <groupId>org.apache.maven.plugins</groupId>
-                            <artifactId>maven-surefire-report-plugin</artifactId>
-                            <version>2.6</version>
-                        </plugin>
-
-                    </reportPlugins>
-                </configuration>
-            </plugin>
-
         </plugins>
 
     </build>
