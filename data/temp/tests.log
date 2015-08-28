@@ -1,0 +1,410 @@
+
+method   : test_01
+input    : D°
+expected : {ChordInfo 'D°' root:D kind:{DIMINISHED '°'}}
+output   : {ChordInfo 'D°' root:D kind:{DIMINISHED '°'}}
+
+method   : test_02
+input    : D°7
+expected : {ChordInfo 'D°7' root:D kind:{DIMINISHED_SEVENTH '°7'}}
+output   : {ChordInfo 'D°7' root:D kind:{DIMINISHED_SEVENTH '°7'}}
+
+method   : test_03
+input    : Dø
+expected : {ChordInfo 'Dø' root:D kind:{HALF_DIMINISHED 'ø'}}
+output   : {ChordInfo 'Dø' root:D kind:{HALF_DIMINISHED 'ø'}}
+
+method   : test_04
+input    : Am6
+expected : {ChordInfo 'Am6' root:A kind:{MINOR_SIXTH 'm6'}}
+output   : {ChordInfo 'Am6' root:A kind:{MINOR_SIXTH 'm6'}}
+
+method   : test_05
+input    : A/E
+expected : {ChordInfo 'A/E' root:A kind:{MAJOR} bass:E}
+output   : {ChordInfo 'A/E' root:A kind:{MAJOR} bass:E}
+
+method   : test_06
+input    : F#
+expected : {ChordInfo 'F#' root:F# kind:{MAJOR}}
+output   : {ChordInfo 'F#' root:F# kind:{MAJOR}}
+
+method   : test_07
+input    : F#m7
+expected : {ChordInfo 'F#m7' root:F# kind:{MINOR_SEVENTH 'm7'}}
+output   : {ChordInfo 'F#m7' root:F# kind:{MINOR_SEVENTH 'm7'}}
+
+method   : test_08
+input    : G6/D
+expected : {ChordInfo 'G6/D' root:G kind:{MAJOR_SIXTH '6'} bass:D}
+output   : {ChordInfo 'G6/D' root:G kind:{MAJOR_SIXTH '6'} bass:D}
+
+method   : test_09
+input    : A11
+expected : {ChordInfo 'A11' root:A kind:{DOMINANT_11_TH '11'}}
+output   : {ChordInfo 'A11' root:A kind:{DOMINANT_11_TH '11'}}
+
+method   : test_10
+input    : G13
+expected : {ChordInfo 'G13' root:G kind:{DOMINANT_13_TH '13'}}
+output   : {ChordInfo 'G13' root:G kind:{DOMINANT_13_TH '13'}}
+
+method   : test_11
+input    : C#
+expected : {ChordInfo 'C#' root:C# kind:{MAJOR}}
+output   : {ChordInfo 'C#' root:C# kind:{MAJOR}}
+
+method   : test_12
+input    : Bb
+expected : {ChordInfo 'Bb' root:Bb kind:{MAJOR}}
+output   : {ChordInfo 'Bb' root:Bb kind:{MAJOR}}
+
+method   : test_13
+input    : A♯
+expected : {ChordInfo 'A♯' root:A# kind:{MAJOR}}
+output   : {ChordInfo 'A♯' root:A# kind:{MAJOR}}
+
+method   : test_14
+input    : A♭
+expected : {ChordInfo 'A♭' root:Ab kind:{MAJOR}}
+output   : {ChordInfo 'A♭' root:Ab kind:{MAJOR}}
+
+method   : test_15
+input    : C/G
+expected : {ChordInfo 'C/G' root:C kind:{MAJOR} bass:G}
+output   : {ChordInfo 'C/G' root:C kind:{MAJOR} bass:G}
+
+method   : test_16
+input    : CMAJ
+expected : {ChordInfo 'CMAJ' root:C kind:{MAJOR 'MAJ'}}
+output   : {ChordInfo 'CMAJ' root:C kind:{MAJOR 'MAJ'}}
+
+method   : test_17
+input    : B△
+expected : {ChordInfo 'B△' root:B kind:{MAJOR_SEVENTH '△' symbol}}
+output   : {ChordInfo 'B△' root:B kind:{MAJOR_SEVENTH '△' symbol}}
+
+method   : test_18
+input    : Bmaj7
+expected : {ChordInfo 'Bmaj7' root:B kind:{MAJOR_SEVENTH 'maj7'}}
+output   : {ChordInfo 'Bmaj7' root:B kind:{MAJOR_SEVENTH 'maj7'}}
+
+method   : test_19
+input    : B△7
+expected : {ChordInfo 'B△7' root:B kind:{MAJOR_SEVENTH '△7' symbol}}
+output   : {ChordInfo 'B△7' root:B kind:{MAJOR_SEVENTH '△7' symbol}}
+
+method   : test_20
+input    : BMaj7/D#
+expected : {ChordInfo 'BMaj7/D#' root:B kind:{MAJOR_SEVENTH 'Maj7'} bass:D#}
+output   : {ChordInfo 'BMaj7/D#' root:B kind:{MAJOR_SEVENTH 'Maj7'} bass:D#}
+
+method   : test_21
+input    : G#m9
+expected : {ChordInfo 'G#m9' root:G# kind:{MINOR_NINTH 'm9'}}
+output   : {ChordInfo 'G#m9' root:G# kind:{MINOR_NINTH 'm9'}}
+
+method   : test_22
+input    : Asus2
+expected : {ChordInfo 'Asus2' root:A kind:{SUSPENDED_SECOND 'sus2'}}
+output   : {ChordInfo 'Asus2' root:A kind:{SUSPENDED_SECOND 'sus2'}}
+
+method   : test_23
+input    : ASUS2
+expected : {ChordInfo 'ASUS2' root:A kind:{SUSPENDED_SECOND 'SUS2'}}
+output   : {ChordInfo 'ASUS2' root:A kind:{SUSPENDED_SECOND 'SUS2'}}
+
+method   : test_24
+input    : Dbsus4
+expected : {ChordInfo 'Dbsus4' root:Db kind:{SUSPENDED_FOURTH 'sus4'}}
+output   : {ChordInfo 'Dbsus4' root:Db kind:{SUSPENDED_FOURTH 'sus4'}}
+
+method   : test_25
+input    : Am
+expected : {ChordInfo 'Am' root:A kind:{MINOR 'm'}}
+output   : {ChordInfo 'Am' root:A kind:{MINOR 'm'}}
+
+method   : test_26
+input    : C#7sus4
+expected : {ChordInfo 'C#7sus4' root:C# kind:{SUSPENDED_FOURTH '7sus4'} deg:(7 ADD)}
+output   : {ChordInfo 'C#7sus4' root:C# kind:{SUSPENDED_FOURTH '7sus4'} deg:(7 ADD)}
+
+method   : test_27
+input    : A(9)
+expected : {ChordInfo 'A(9)' root:A kind:{MAJOR parens} deg:(9 ADD)}
+output   : {ChordInfo 'A(9)' root:A kind:{MAJOR parens} deg:(9 ADD)}
+
+method   : test_28
+input    : A7
+expected : {ChordInfo 'A7' root:A kind:{DOMINANT '7'}}
+output   : {ChordInfo 'A7' root:A kind:{DOMINANT '7'}}
+
+method   : test_29
+input    : A7(b5)
+expected : {ChordInfo 'A7(b5)' root:A kind:{DOMINANT '7' parens} deg:(5b ALTER)}
+output   : {ChordInfo 'A7(b5)' root:A kind:{DOMINANT '7' parens} deg:(5b ALTER)}
+
+method   : test_30
+input    : Am7b13
+expected : {ChordInfo 'Am7b13' root:A kind:{MINOR_SEVENTH 'm7b13'} deg:(13b ADD)}
+output   : {ChordInfo 'Am7b13' root:A kind:{MINOR_SEVENTH 'm7b13'} deg:(13b ADD)}
+
+method   : test_31
+input    : A(#9)
+expected : {ChordInfo 'A(#9)' root:A kind:{MAJOR parens} deg:(9# ADD)}
+output   : {ChordInfo 'A(#9)' root:A kind:{MAJOR parens} deg:(9# ADD)}
+
+method   : test_32
+input    : B7(#11b9)
+expected : {ChordInfo 'B7(#11b9)' root:B kind:{DOMINANT '7' parens} deg:(11# ADD) deg:(9b ADD)}
+output   : {ChordInfo 'B7(#11b9)' root:B kind:{DOMINANT '7' parens} deg:(11# ADD) deg:(9b ADD)}
+
+method   : test_33
+input    : Amin
+expected : {ChordInfo 'Amin' root:A kind:{MINOR 'min'}}
+output   : {ChordInfo 'Amin' root:A kind:{MINOR 'min'}}
+
+method   : test_34
+input    : A-
+expected : {ChordInfo 'A-' root:A kind:{MINOR '-' symbol}}
+output   : {ChordInfo 'A-' root:A kind:{MINOR '-' symbol}}
+
+method   : test_35
+input    : C+
+expected : {ChordInfo 'C+' root:C kind:{AUGMENTED '+' symbol}}
+output   : {ChordInfo 'C+' root:C kind:{AUGMENTED '+' symbol}}
+
+method   : test_36
+input    : Caug
+expected : {ChordInfo 'Caug' root:C kind:{AUGMENTED 'aug'}}
+output   : {ChordInfo 'Caug' root:C kind:{AUGMENTED 'aug'}}
+
+method   : test_37
+input    : Ddim
+expected : {ChordInfo 'Ddim' root:D kind:{DIMINISHED 'dim'}}
+output   : {ChordInfo 'Ddim' root:D kind:{DIMINISHED 'dim'}}
+
+method   : test_38
+input    : Dm(b5)
+expected : {ChordInfo 'Dm(b5)' root:D kind:{MINOR 'm' parens} deg:(5b ALTER)}
+output   : {ChordInfo 'Dm(b5)' root:D kind:{MINOR 'm' parens} deg:(5b ALTER)}
+
+method   : test_39
+input    : C
+expected : {ChordInfo 'C' root:C kind:{MAJOR}}
+output   : {ChordInfo 'C' root:C kind:{MAJOR}}
+
+method   : test_40
+input    : C°7
+expected : {ChordInfo 'C°7' root:C kind:{DIMINISHED_SEVENTH '°7'}}
+output   : {ChordInfo 'C°7' root:C kind:{DIMINISHED_SEVENTH '°7'}}
+
+method   : test_41
+input    : C+7
+expected : {ChordInfo 'C+7' root:C kind:{AUGMENTED_SEVENTH '+7' symbol}}
+output   : {ChordInfo 'C+7' root:C kind:{AUGMENTED_SEVENTH '+7' symbol}}
+
+method   : test_42
+input    : Cø
+expected : {ChordInfo 'Cø' root:C kind:{HALF_DIMINISHED 'ø'}}
+output   : {ChordInfo 'Cø' root:C kind:{HALF_DIMINISHED 'ø'}}
+
+method   : test_43
+input    : Cmin(maj7)
+expected : {ChordInfo 'Cmin(maj7)' root:C kind:{MAJOR_MINOR 'min(maj7)'}}
+output   : {ChordInfo 'Cmin(maj7)' root:C kind:{MAJOR_MINOR 'min(maj7)'}}
+
+method   : test_44
+input    : Cmin(△7)
+expected : {ChordInfo 'Cmin(△7)' root:C kind:{MAJOR_MINOR 'min(△7)'}}
+output   : {ChordInfo 'Cmin(△7)' root:C kind:{MAJOR_MINOR 'min(△7)'}}
+
+method   : test_45
+input    : C-(△7)
+expected : {ChordInfo 'C-(△7)' root:C kind:{MAJOR_MINOR '-(△7)' symbol}}
+output   : {ChordInfo 'C-(△7)' root:C kind:{MAJOR_MINOR '-(△7)' symbol}}
+
+method   : test_46
+input    : Cm(M7)
+expected : {ChordInfo 'Cm(M7)' root:C kind:{MAJOR_MINOR 'm(M7)'}}
+output   : {ChordInfo 'Cm(M7)' root:C kind:{MAJOR_MINOR 'm(M7)'}}
+
+method   : test_47
+input    : C6
+expected : {ChordInfo 'C6' root:C kind:{MAJOR_SIXTH '6'}}
+output   : {ChordInfo 'C6' root:C kind:{MAJOR_SIXTH '6'}}
+
+method   : test_48
+input    : C△6
+expected : {ChordInfo 'C△6' root:C kind:{MAJOR_SIXTH '△6' symbol}}
+output   : {ChordInfo 'C△6' root:C kind:{MAJOR_SIXTH '△6' symbol}}
+
+method   : test_49
+input    : Cm6
+expected : {ChordInfo 'Cm6' root:C kind:{MINOR_SIXTH 'm6'}}
+output   : {ChordInfo 'Cm6' root:C kind:{MINOR_SIXTH 'm6'}}
+
+method   : test_50
+input    : C-6
+expected : {ChordInfo 'C-6' root:C kind:{MINOR_SIXTH '-6' symbol}}
+output   : {ChordInfo 'C-6' root:C kind:{MINOR_SIXTH '-6' symbol}}
+
+method   : test_51
+input    : C9
+expected : {ChordInfo 'C9' root:C kind:{DOMINANT_NINTH '9'}}
+output   : {ChordInfo 'C9' root:C kind:{DOMINANT_NINTH '9'}}
+
+method   : test_52
+input    : Cmaj9
+expected : {ChordInfo 'Cmaj9' root:C kind:{MAJOR_NINTH 'maj9'}}
+output   : {ChordInfo 'Cmaj9' root:C kind:{MAJOR_NINTH 'maj9'}}
+
+method   : test_53
+input    : Cmaj
+expected : {ChordInfo 'Cmaj' root:C kind:{MAJOR 'maj'}}
+output   : {ChordInfo 'Cmaj' root:C kind:{MAJOR 'maj'}}
+
+method   : test_54
+input    : C△9
+expected : {ChordInfo 'C△9' root:C kind:{MAJOR_NINTH '△9' symbol}}
+output   : {ChordInfo 'C△9' root:C kind:{MAJOR_NINTH '△9' symbol}}
+
+method   : test_55
+input    : Cm9
+expected : {ChordInfo 'Cm9' root:C kind:{MINOR_NINTH 'm9'}}
+output   : {ChordInfo 'Cm9' root:C kind:{MINOR_NINTH 'm9'}}
+
+method   : test_56
+input    : C-9
+expected : {ChordInfo 'C-9' root:C kind:{MINOR_NINTH '-9' symbol}}
+output   : {ChordInfo 'C-9' root:C kind:{MINOR_NINTH '-9' symbol}}
+
+method   : test_57
+input    : C11
+expected : {ChordInfo 'C11' root:C kind:{DOMINANT_11_TH '11'}}
+output   : {ChordInfo 'C11' root:C kind:{DOMINANT_11_TH '11'}}
+
+method   : test_58
+input    : Cmaj11
+expected : {ChordInfo 'Cmaj11' root:C kind:{MAJOR_11_TH 'maj11'}}
+output   : {ChordInfo 'Cmaj11' root:C kind:{MAJOR_11_TH 'maj11'}}
+
+method   : test_59
+input    : C△11
+expected : {ChordInfo 'C△11' root:C kind:{MAJOR_11_TH '△11' symbol}}
+output   : {ChordInfo 'C△11' root:C kind:{MAJOR_11_TH '△11' symbol}}
+
+method   : test_60
+input    : Cm11
+expected : {ChordInfo 'Cm11' root:C kind:{MINOR_11_TH 'm11'}}
+output   : {ChordInfo 'Cm11' root:C kind:{MINOR_11_TH 'm11'}}
+
+method   : test_61
+input    : C-11
+expected : {ChordInfo 'C-11' root:C kind:{MINOR_11_TH '-11' symbol}}
+output   : {ChordInfo 'C-11' root:C kind:{MINOR_11_TH '-11' symbol}}
+
+method   : test_62
+input    : C13
+expected : {ChordInfo 'C13' root:C kind:{DOMINANT_13_TH '13'}}
+output   : {ChordInfo 'C13' root:C kind:{DOMINANT_13_TH '13'}}
+
+method   : test_63
+input    : Cmaj13
+expected : {ChordInfo 'Cmaj13' root:C kind:{MAJOR_13_TH 'maj13'}}
+output   : {ChordInfo 'Cmaj13' root:C kind:{MAJOR_13_TH 'maj13'}}
+
+method   : test_64
+input    : Cm
+expected : {ChordInfo 'Cm' root:C kind:{MINOR 'm'}}
+output   : {ChordInfo 'Cm' root:C kind:{MINOR 'm'}}
+
+method   : test_65
+input    : C△13
+expected : {ChordInfo 'C△13' root:C kind:{MAJOR_13_TH '△13' symbol}}
+output   : {ChordInfo 'C△13' root:C kind:{MAJOR_13_TH '△13' symbol}}
+
+method   : test_66
+input    : Cm13
+expected : {ChordInfo 'Cm13' root:C kind:{MINOR_13_TH 'm13'}}
+output   : {ChordInfo 'Cm13' root:C kind:{MINOR_13_TH 'm13'}}
+
+method   : test_67
+input    : C-13
+expected : {ChordInfo 'C-13' root:C kind:{MINOR_13_TH '-13' symbol}}
+output   : {ChordInfo 'C-13' root:C kind:{MINOR_13_TH '-13' symbol}}
+
+method   : test_68
+input    : Csus2
+expected : {ChordInfo 'Csus2' root:C kind:{SUSPENDED_SECOND 'sus2'}}
+output   : {ChordInfo 'Csus2' root:C kind:{SUSPENDED_SECOND 'sus2'}}
+
+method   : test_69
+input    : Csus4
+expected : {ChordInfo 'Csus4' root:C kind:{SUSPENDED_FOURTH 'sus4'}}
+output   : {ChordInfo 'Csus4' root:C kind:{SUSPENDED_FOURTH 'sus4'}}
+
+method   : test_70
+input    : C-
+expected : {ChordInfo 'C-' root:C kind:{MINOR '-' symbol}}
+output   : {ChordInfo 'C-' root:C kind:{MINOR '-' symbol}}
+
+method   : test_71
+input    : C°
+expected : {ChordInfo 'C°' root:C kind:{DIMINISHED '°'}}
+output   : {ChordInfo 'C°' root:C kind:{DIMINISHED '°'}}
+
+method   : test_72
+input    : C7
+expected : {ChordInfo 'C7' root:C kind:{DOMINANT '7'}}
+output   : {ChordInfo 'C7' root:C kind:{DOMINANT '7'}}
+
+method   : test_73
+input    : Cmaj7
+expected : {ChordInfo 'Cmaj7' root:C kind:{MAJOR_SEVENTH 'maj7'}}
+output   : {ChordInfo 'Cmaj7' root:C kind:{MAJOR_SEVENTH 'maj7'}}
+
+method   : test_74
+input    : C△
+expected : {ChordInfo 'C△' root:C kind:{MAJOR_SEVENTH '△' symbol}}
+output   : {ChordInfo 'C△' root:C kind:{MAJOR_SEVENTH '△' symbol}}
+
+method   : test_75
+input    : Cm7
+expected : {ChordInfo 'Cm7' root:C kind:{MINOR_SEVENTH 'm7'}}
+output   : {ChordInfo 'Cm7' root:C kind:{MINOR_SEVENTH 'm7'}}
+
+method   : test_76
+input    : C-7
+expected : {ChordInfo 'C-7' root:C kind:{MINOR_SEVENTH '-7' symbol}}
+output   : {ChordInfo 'C-7' root:C kind:{MINOR_SEVENTH '-7' symbol}}
+
+method   : tgfi_01
+input    : A-7
+expected : {ChordInfo 'A-7' root:A kind:{MINOR_SEVENTH '-7' symbol}}
+output   : {ChordInfo 'A-7' root:A kind:{MINOR_SEVENTH '-7' symbol}}
+
+method   : tgfi_02
+input    : D-
+expected : {ChordInfo 'D-' root:D kind:{MINOR '-' symbol}}
+output   : {ChordInfo 'D-' root:D kind:{MINOR '-' symbol}}
+
+method   : tgfi_04
+input    : D-7
+expected : {ChordInfo 'D-7' root:D kind:{MINOR_SEVENTH '-7' symbol}}
+output   : {ChordInfo 'D-7' root:D kind:{MINOR_SEVENTH '-7' symbol}}
+
+method   : tgfi_05
+input    : D-7/C
+expected : {ChordInfo 'D-7/C' root:D kind:{MINOR_SEVENTH '-7' symbol} bass:C}
+output   : {ChordInfo 'D-7/C' root:D kind:{MINOR_SEVENTH '-7' symbol} bass:C}
+
+method   : tgfi_09
+input    : Eb13
+expected : {ChordInfo 'Eb13' root:Eb kind:{DOMINANT_13_TH '13'}}
+output   : {ChordInfo 'Eb13' root:Eb kind:{DOMINANT_13_TH '13'}}
+
+method   : test_101
+input    : C.
+expected : null
+output   : null

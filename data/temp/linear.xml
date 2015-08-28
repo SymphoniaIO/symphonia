@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<linear-evaluator>
+    <defaults>
+        <parameter weight="6.222049387517014E-4" name="first"/>
+        <parameter weight="1.4113509863285175E-4" name="second"/>
+    </defaults>
+    <categories>
+        <item id="A">
+            <parameter max="11.0" mean="10.0" min="9.0" weight="1.5" training="NOMINAL" name="first">
+                <population sum="30.0" squares-sum="302.0" count="3"/>
+            </parameter>
+            <parameter max="23.0" mean="21.0" min="20.0" weight="0.5" training="NOMINAL" name="second">
+                <population sum="63.0" squares-sum="1329.0" count="3"/>
+            </parameter>
+        </item>
+        <item id="B">
+            <parameter max="7.0" mean="6.0" min="5.0" weight="1.0" training="NOMINAL" name="first">
+                <population sum="12.0" squares-sum="74.0" count="2"/>
+            </parameter>
+            <parameter max="50.0" mean="45.0" min="40.0" weight="0.04" training="NOMINAL" name="second">
+                <population sum="90.0" squares-sum="4100.0" count="2"/>
+            </parameter>
+        </item>
+        <item id="C">
+            <parameter max="100.0" mean="95.75" min="90.0" weight="0.07048458149779736" training="NOMINAL" name="first">
+                <population sum="383.0" squares-sum="36729.0" count="4"/>
+            </parameter>
+            <parameter max="220.0" mean="208.75" min="200.0" weight="0.018285714285714287" training="NOMINAL" name="second">
+                <population sum="835.0" squares-sum="174525.0" count="4"/>
+            </parameter>
+        </item>
+        <item id="D">
+            <parameter max="30.0" mean="30.0" min="30.0" weight="0.0" training="SINGLE_DATA" name="first">
+                <population sum="30.0" squares-sum="900.0" count="1"/>
+            </parameter>
+            <parameter max="60.0" mean="60.0" min="60.0" weight="0.0" training="SINGLE_DATA" name="second">
+                <population sum="60.0" squares-sum="3600.0" count="1"/>
+            </parameter>
+        </item>
+        <item id="E">
+            <parameter max="80.0" mean="80.0" min="80.0" weight="0.0" training="IDENTICAL_VALUES" name="first">
+                <population sum="160.0" squares-sum="12800.0" count="2"/>
+            </parameter>
+            <parameter max="25.0" mean="22.5" min="20.0" weight="0.16" training="NOMINAL" name="second">
+                <population sum="45.0" squares-sum="1025.0" count="2"/>
+            </parameter>
+        </item>
+    </categories>
+</linear-evaluator>
