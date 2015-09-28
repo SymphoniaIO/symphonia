@@ -23,6 +23,7 @@
   </repositories>
 
   <modules>
+    <module>proxymusic</module>
     <module>symphonia-core</module>
     <module>symphonia-war</module>
     <module>symphonia-ui</module>
