@@ -1,0 +1,72 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Documentation of APIs provided by the public instance of Symphonia.io.",
+    "version" : "v1",
+    "title" : "Symphonia.io - public OMR service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/api",
+  "tags" : [ {
+    "name" : "omr"
+  } ],
+  "schemes" : [ "http", "https" ],
+  "paths" : {
+    "/omr/musicxml" : {
+      "post" : {
+        "tags" : [ "omr" ],
+        "summary" : "Converts given image to MusicXML",
+        "description" : "",
+        "operationId" : "getMusicXML",
+        "consumes" : [ "multipart/form-data" ],
+        "produces" : [ "application/xml" ],
+        "parameters" : [ {
+          "name" : "attachment",
+          "in" : "formData",
+          "description" : "File to upload",
+          "required" : true,
+          "type" : "file"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OMR successful."
+          },
+          "204" : {
+            "description" : "No supported image provided."
+          },
+          "500" : {
+            "description" : "Error processing input image."
+          }
+        }
+      }
+    },
+    "/omr/pdf" : {
+      "post" : {
+        "tags" : [ "omr" ],
+        "summary" : "Converts given image into PDF",
+        "description" : "",
+        "operationId" : "getPdf",
+        "consumes" : [ "multipart/form-data" ],
+        "produces" : [ "application/octet-stream" ],
+        "parameters" : [ {
+          "name" : "attachment",
+          "in" : "formData",
+          "description" : "File to upload",
+          "required" : true,
+          "type" : "file"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OMR successful."
+          },
+          "204" : {
+            "description" : "No supported image provided."
+          },
+          "500" : {
+            "description" : "Error processing input image."
+          }
+        }
+      }
+    }
+  }
+}
