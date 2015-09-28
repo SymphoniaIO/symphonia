@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.audiveris</groupId>
+    <artifactId>proxymusic</artifactId>
+    <version>3.0</version>
+    <packaging>jar</packaging>
+
+    <name>ProxyMusic</name>
+    <url>http://kenai.com/projects/proxymusic</url>
+    <description>ProxyMusic provides a binding between Java objects in memory and data formatted according to MusicXML 3.0</description>
+
+    <licenses>
+        <license>
+            <name>GNU General Lesser Public License (LGPL) version 2.1</name>
+            <url>http://www.gnu.org/licenses/lgpl-2.1.txt</url>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>Audiveris Ltd</name>
+        <url>http://www.audiveris.org</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>hbitteur</id>
+            <name>Hervé Bitteur</name>
+            <email>herve.bitteur@audiveris.org</email>
+            <organization>Audiveris Ltd</organization>
+            <organizationUrl>http://www.audiveris.org</organizationUrl>
+            <roles>
+                <role>administrator</role>
+                <role>developer</role>
+            </roles>
+            <timezone>+1</timezone>
+            <properties>
+                <picUrl>images/Herve-64x64.png</picUrl>
+            </properties>
+        </developer>
+    </developers>
+
+    <!-- Source Code Management -->
+    <scm>
+        <connection>scm:hg:https://hg.kenai.com/hg/proxymusic~hg</connection>
+        <developerConnection>scm:hg:https://hg.kenai.com/hg/proxymusic~hg</developerConnection>
+        <url>https://hg.kenai.com/hg/proxymusic~hg</url>
+    </scm>
+
+    <!-- Issue management -->
+    <issueManagement>
+        <system>Jira</system>
+        <url>http://kenai.com/jira/browse/PROXYMUSIC/</url>
+    </issueManagement>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>java8-disable-strict-javadoc</id>
+            <activation>
+                <jdk>[1.8,)</jdk>
+            </activation>
+            <properties>
+                <javadoc.doclint.none>-Xdoclint:none</javadoc.doclint.none>
+            </properties>
+        </profile>
+    </profiles>
+
+    <dependencies>
+
+        <!-- Unitary tests framework -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Logging facade API (with no imposed binding) -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.10</version>
+        </dependency>
+
+        <!-- Logging bindings, just for tests -->
+        <dependency>
+            <scope>test</scope>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+            <!-- configure Maven to use JDK 7 for compilation -->
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <testSource>1.7</testSource>
+                    <testTarget>1.7</testTarget>
+                </configuration>
+            </plugin>
+            
+            <!-- Set system property to allow JAXB access to external schema -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>properties-maven-plugin</artifactId>
+                <version>1.0-alpha-2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>set-system-properties</goal>
+                        </goals>
+                        <configuration>
+                            <properties>
+                                <property>
+                                    <name>javax.xml.accessExternalSchema</name>
+                                    <value>all</value>
+                                </property>
+                            </properties>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!-- Generating Java sources from schemas -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <!-- for Opus -->
+                    <execution>
+                        <id>xjc-opus</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                        <configuration>
+                            <schemaFiles>opus.xsd</schemaFiles>
+                            <packageName>com.audiveris.proxymusic.opus</packageName>
+                            <!-- no binding customization -->
+                            <bindingFiles>void.xjb</bindingFiles>
+                        </configuration>
+                    </execution>
+                    
+                    <!-- for MusicXML -->
+                    <execution>
+                        <id>xjc-musicxml</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                        <configuration>
+                            <schemaFiles>musicxml.xsd</schemaFiles>
+                            <packageName>com.audiveris.proxymusic</packageName>
+                            <bindingFiles>musicxml.xjb</bindingFiles>
+                            <clearOutputDir>false</clearOutputDir>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Entries in Jar manifest -->
+            <!-- NOTA: For this, we need exportAntProperties to work correctly
+            and this is not yet the case for Maven 3.0.4 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
+            <!-- Building a Jar of sources -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- Building a Jar of JavaDoc -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <!-- To avoid too many 'errors' with JDK8 doclint -->
+                    <additionalparam>${javadoc.doclint.none}</additionalparam>
+                </configuration>
+                <version>2.10.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+
+    </build>
+</project>
