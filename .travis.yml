@@ -2,7 +2,7 @@ language: java
 
 install: 
   - sudo apt-get update -q
-  - sudo apt-get install -y leptonica
+  - sudo apt-get install -y libleptonica tesseract-ocr-all
 
 script: "mvn clean install"
 
