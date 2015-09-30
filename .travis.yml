@@ -3,7 +3,7 @@ language: java
 install: 
   - sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu trusty main universe"
   - sudo apt-get update -q
-  - sudo apt-get install -y gcc-4.8
+  - sudo apt-get install -y gcc-4.9
 
 script: "mvn clean install"
 
