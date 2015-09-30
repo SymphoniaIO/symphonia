@@ -15,7 +15,7 @@ import omr.run.Orientation;
 import omr.run.Run;
 import omr.run.RunsTable;
 
-import omr.util.BaseTestCase;
+import omr.util.BaseTestCaseClass;
 
 import java.awt.Dimension;
 import java.io.File;
@@ -39,7 +39,7 @@ import org.junit.BeforeClass;
  * @author Hervé Bitteur
  */
 public class SectionBindingTest
-        extends BaseTestCase
+        extends BaseTestCaseClass
 {
     //~ Instance fields --------------------------------------------------------
 

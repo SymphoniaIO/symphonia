@@ -14,7 +14,7 @@ package omr.math;
 
 //import org.testng.annotations.*;
 import omr.moments.GeometricMoments;
-import omr.util.BaseTestCase;
+import omr.util.BaseTestCaseClass;
 
 /**
  * Class <code>GeometricMomentsTest</code> performs unit tests on
@@ -23,7 +23,7 @@ import omr.util.BaseTestCase;
  * @author Hervé Bitteur
  */
 public class GeometricMomentsTest
-    extends BaseTestCase
+    extends BaseTestCaseClass
 {
     //~ Static fields/initializers ---------------------------------------------
 

@@ -12,7 +12,7 @@
 package omr.math;
 
 //import org.testng.annotations.*;
-import omr.util.BaseTestCase;
+import omr.util.BaseTestCaseClass;
 
 import static junit.framework.Assert.*;
 import junit.framework.*;
@@ -25,7 +25,7 @@ import junit.framework.*;
  * @version $Id$
  */
 public class PopulationTest
-    extends BaseTestCase
+    extends BaseTestCaseClass
 {
     //~ Static variables/initializers -------------------------------------
 

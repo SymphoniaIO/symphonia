@@ -13,7 +13,7 @@ package omr.jaxb.basic;
 
 import omr.Main;
 
-import omr.util.BaseTestCase;
+import omr.util.BaseTestCaseClass;
 
 import java.awt.Point;
 import java.io.*;
@@ -29,7 +29,7 @@ import javax.xml.bind.*;
  * @version $Id$
  */
 public class BasicTest
-    extends BaseTestCase
+    extends BaseTestCaseClass
 {
     //~ Methods ----------------------------------------------------------------
 

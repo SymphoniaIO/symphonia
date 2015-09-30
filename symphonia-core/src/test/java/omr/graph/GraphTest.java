@@ -11,7 +11,7 @@
 // </editor-fold>
 package omr.graph;
 
-import omr.util.BaseTestCase;
+import omr.util.BaseTestCaseClass;
 import static junit.framework.Assert.*;
 
 import java.util.*;
@@ -23,7 +23,7 @@ import java.util.*;
  * @author Hervé Bitteur
  */
 public class GraphTest
-    extends BaseTestCase
+    extends BaseTestCaseClass
 {
     //~ Instance fields --------------------------------------------------------
 

@@ -13,7 +13,7 @@ package omr.math;
 
 import omr.Main;
 
-import omr.util.BaseTestCase;
+import omr.util.BaseTestCaseClass;
 import static junit.framework.Assert.*;
 
 import java.io.File;
@@ -34,7 +34,7 @@ import javax.xml.bind.*;
  * @version $Id$
  */
 public class NeuralNetworkTest
-        extends BaseTestCase
+        extends BaseTestCaseClass
 {
     //~ Static fields/initializers ---------------------------------------------
 

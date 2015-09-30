@@ -17,7 +17,7 @@ import omr.run.Orientation;
 import omr.run.Run;
 import omr.run.RunsTable;
 
-import omr.util.BaseTestCase;
+import omr.util.BaseTestCaseClass;
 import static junit.framework.Assert.*;
 
 import java.awt.Dimension;
@@ -34,7 +34,7 @@ import java.util.Set;
  * Lag features.
  */
 public class LagTest
-    extends BaseTestCase
+    extends BaseTestCaseClass
 {
     //~ Instance fields --------------------------------------------------------
 

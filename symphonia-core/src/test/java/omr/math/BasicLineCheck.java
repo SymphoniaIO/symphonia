@@ -11,7 +11,7 @@
 // </editor-fold>
 package omr.math;
 
-import omr.util.BaseTestCase;
+import omr.util.BaseTestCaseClass;
 import static junit.framework.Assert.*;
 import static java.lang.Math.*;
 
@@ -22,7 +22,7 @@ import static java.lang.Math.*;
  * @author Hervé Bitteur
  */
 public class BasicLineCheck
-    extends BaseTestCase
+    extends BaseTestCaseClass
 {
     //~ Methods ----------------------------------------------------------------
 

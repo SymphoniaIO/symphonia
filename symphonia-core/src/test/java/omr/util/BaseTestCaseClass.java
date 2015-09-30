@@ -22,14 +22,14 @@ import junit.framework.*;
  * @author Hervé Bitteur
  * @version $Id$
  */
-public class BaseTestCase
+public class BaseTestCaseClass
     extends TestCase
 {
-    public BaseTestCase()
+    public BaseTestCaseClass()
     {
     }
 
-    public BaseTestCase (String name)
+    public BaseTestCaseClass (String name)
     {
         super(name);
     }

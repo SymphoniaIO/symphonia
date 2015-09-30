@@ -12,7 +12,7 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
-import omr.util.BaseTestCase;
+import omr.util.BaseTestCaseClass;
 
 import org.jdesktop.application.SingleFrameApplication;
 
@@ -35,7 +35,7 @@ import org.junit.Test;
  * @author herve
  */
 public class BsafTest
-        extends BaseTestCase
+        extends BaseTestCaseClass
 {
     //~ Methods ----------------------------------------------------------------
 

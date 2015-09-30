@@ -14,7 +14,7 @@ package omr.ui;
 import omr.ui.field.LDoubleField;
 import omr.ui.view.*;
 
-import omr.util.BaseTestCase;
+import omr.util.BaseTestCaseClass;
 import static junit.framework.Assert.*;
 
 import java.awt.*;
@@ -30,7 +30,7 @@ import javax.swing.event.*;
  * @version TBD
   */
 public class ZoomTest
-    extends BaseTestCase
+    extends BaseTestCaseClass
 {
     //~ Methods ----------------------------------------------------------------
 

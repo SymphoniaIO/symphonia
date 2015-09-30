@@ -11,7 +11,7 @@
 // </editor-fold>
 package omr.math;
 
-import omr.util.BaseTestCase;
+import omr.util.BaseTestCaseClass;
 import static junit.framework.Assert.*;
 
 import org.junit.Test;
@@ -22,7 +22,7 @@ import org.junit.Test;
  * @author Hervé Bitteur
  */
 public class BasicLineTest
-    extends BaseTestCase
+    extends BaseTestCaseClass
 {
     //~ Static fields/initializers ---------------------------------------------
 

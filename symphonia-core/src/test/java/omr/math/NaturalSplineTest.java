@@ -4,7 +4,7 @@
  */
 package omr.math;
 
-import omr.util.BaseTestCase;
+import omr.util.BaseTestCaseClass;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -17,7 +17,7 @@ import org.junit.Test;
  * @author Etiolles
  */
 public class NaturalSplineTest
-    extends BaseTestCase
+    extends BaseTestCaseClass
 {
     //~ Constructors -----------------------------------------------------------
 

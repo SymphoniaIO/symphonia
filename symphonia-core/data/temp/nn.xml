@@ -2,21 +2,21 @@
 <neural-network input-size="2" hidden-size="2" output-size="1">
     <hidden-weights>
         <row>
-            <item>2.568766214615085</item>
-            <item>-6.363392941831877</item>
-            <item>-6.306077212402352</item>
+            <item>2.56913854677477</item>
+            <item>-6.32720287729736</item>
+            <item>-6.341920324633235</item>
         </row>
         <row>
-            <item>6.987815487255333</item>
-            <item>-4.702926936299494</item>
-            <item>-4.692035991794051</item>
+            <item>6.995366032252854</item>
+            <item>-4.70091782990297</item>
+            <item>-4.70405761180135</item>
         </row>
     </hidden-weights>
     <output-weights>
         <row>
-            <item>-4.512828610541998</item>
-            <item>-9.729612448813217</item>
-            <item>9.554564306122623</item>
+            <item>-4.510679212682264</item>
+            <item>-9.7266467308105</item>
+            <item>9.549933099896723</item>
         </row>
     </output-weights>
 </neural-network>
